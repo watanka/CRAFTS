@@ -1,0 +1,25 @@
+SAVED_MODEL_PATH: '' #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/pretrain/TRBA_best_acc_210629.pth'                       # path to model to continue training
+
+# DATA PROCESSING
+imgH: 16                                   # the height of the input image
+imgW: 64                                  # the width of the input image
+CHAR_PATH: './assets/char_dicts/charset-kor-sp.txt' # path to character label
+MAX_BATCH_LENGTH: 8                       # the number of word bbox sampled from one image
+PAD: ''
+# MODEL ARCHITECTURE
+Transformation: 'TPS'                      # Transformation stage. None|TPS
+FeatureExtraction: 'SimpleResNet'                # FeatureExtraction stage. VGG|RCNN|ResNet|SimpleResNet
+SequenceModeling: 'BiLSTM'                 # SequenceModeling stage. None|BiLSTM
+Prediction: 'Attn'                         # Prediction stage. CTC|Attn
+ViTSTR: False
+Transformer : False
+TransformerModel: 'vitstr_tiny_patch16_224'
+patch_size: 8
+num_fiducial: 20                           # number of fiducial points of TPS-STN
+input_channel: 130                          # the number of input channel of Feature extractor
+output_channel: 512                        # the number of output channel of Feature extractor
+hidden_size: 256                           # the size of the LSTM hidden state
+baiduCTC : True                            # for data_filtering_off mode
+batch_max_length : 16                      # max length of batch
+str_batch_size : 16                     # max length of cropped batch
+# num_class : 1804                           # subject to change. depends on len(converter.character)

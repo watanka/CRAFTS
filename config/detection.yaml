@@ -1,0 +1,12 @@
+NUM_CLASSES: 4
+SAVED_MODEL_PATH: '' #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFT-reimplement/TwinReaderv2/911/0/CRAFT569.pth' #pretrain/craft_mlt_25k.pth'
+ORIENTATION_WEIGHT: 0.1
+
+CANVAS_SIZE: 2380
+MAG_RATIO: 2.5
+TEXT_THRESHOLD: 0.7
+LINK_THRESHOLD: 0.4
+LOW_TEXT: 0.5
+POLY: True
+
+save_crop_batches: False

@@ -1,0 +1,43 @@
+EXP_NAME: 'TPS-Attn-wild-MLT_korean-new'                                                                     # Where to store logs and models
+SAVED_MODEL_PATH: ''
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-Attn-wild-MLT_korean-v0.4/CRAFTS6.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-Transformer-wild-MLT_korean-v0.3H16W64P8/CRAFTS40.pth'
+#
+
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-Transformer-wild-MLT_korean-v0.2H16W64_lr1e-3/CRAFTS4.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-Transformer-wild-MLT_korean-v0.2H224W224_min_lr1e-8/CRAFTS2.pth' # '/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean-v0.2-transformerH224W224/CRAFTS0.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean-v0.2-transformerH16W64/CRAFTS0.pth' #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean-v0.2-transformer/CRAFTS0.pth' #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean/CRAFTS3.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean-v0.2/CRAFTS0.pth'
+#
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-Doc-Hanwha-MG-MLT_korean/CRAFTS0.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-small/CRAFTS0.pth'
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild-small/CRAFTS0.pth'
+#/CRAFTS38.pth' #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild_doc/CRAFTS1.pth'
+
+#'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-wild_doc/CRAFTS30.pth'   #'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-SimpleResNet-BiLSTM-Attn-Seed123/CRAFTS15.pth' ##'/home/jovyan/nas/1_user/eunsung.shin@agilesoda.ai/module/CRAFTS/saved_models/TPS-ResNet-BiLSTM-Attn-Seed123/CRAFTS28.pth'
+MODE: 1                                                                          # 1: train, 2: test
+MODEL: 1                                                                         # 1: CRAFTS, 2: CRAFT, 3: STR
+SEED: 123                                                                       # random seed
+GPU: ['2']                                                                         # list of gpu ids
+WORKERS: 8                                                                      # number of data loading workers
+CUDA: True # 현재, test_crafts는 무조건 cpu모드로 돌아감. line 266
+
+DATA_PATH: ['/home/jovyan/nas/2_public_data/TwinReader/std_data/textdetection_v2_large/AIHUB_wild_scene/', '/home/jovyan/nas/2_public_data/TwinReader/std_data/textdetection_v2_large/pdf_data/', '/home/jovyan/nas/2_public_data/TwinReader/std_data/textdetection_v2_large/MLT_korean/','/home/jovyan/nas/2_public_data/TwinReader/std_data/textdetection_v2_large/Hanwha/' ]
+#
+# , '/home/jovyan/nas/2_public_data/TwinReader/std_data/textdetection_v2_large/MG/', 
+#             # Path to data loader; should have 'image' and 'label_txt' folder
+
+
+
+STD_CONFIG_PATH: './config/detection.yaml'                                       # Path to STD configuration file # 아직 사용할 필요 없음(09/23일 기준)
+STR_CONFIG_PATH: './config/recognition.yaml'                                     # Path to STR configuration file
+
+LR: 1e-4                                                                         # initial learning rate
+MOMENTUM: 1e-3                                                                   # Momentum value for optim
+WEIGHT_DECAY: 5e-4                                                               # Weight decay for SGD
+GAMMA: 0.99                                                                      # Gamma update for SGD
+BATCH_SIZE: 8                                                                    # Batch Size
+MAX_EPOCH: 3000                                                                  # Number of training teration
+visualize_orientation: False                                                      # while inference, visualize orientation results
+training : True
+ 
